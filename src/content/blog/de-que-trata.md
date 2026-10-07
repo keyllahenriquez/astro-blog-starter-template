@@ -7,7 +7,7 @@ heroImage: "/blog-placeholder-about.jpg"
 
 HABITARME
 
-HABITARME es un espacio para poner en palabras aquello que muchas veces permanece dentro: pensamientos, emociones, experiencias, preguntas, descubrimientos y también contradicciones.
+Es un espacio para poner en palabras aquello que muchas veces permanece dentro: pensamientos, emociones, experiencias, preguntas, descubrimientos y también contradicciones.
 
 HABITARME nace como un espacio para escribir.
 
@@ -37,4 +37,4 @@ Este blog es un lugar de encuentro con las distintas versiones de mí que han id
 
 Quizás algo de lo que encuentres aquí te acompañe, quizás te invite a preguntarte algo, quizás pases por aquí y continúes tu camino. Cualquier cosa que ocurra, es maravilloso.
 
-¡Bienvenidos a HABITARME!
+Gracias por estar aquí!

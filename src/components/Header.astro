@@ -1,56 +1,20 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import HeaderLink from './HeaderLink.astro';
 ---
 
-<!doctype html>
-<html lang="es">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<link rel="preconnect" href="https://googleapis.com">
-		<link rel="preconnect" href="https://gstatic.com" crossorigin>
-		<link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-	</head>
-	<body style="font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fafafa; color: #2c2c2c;">
-		<Header />
+<header style="background-color: #000000; padding: 1rem 1.5rem; position: sticky; top: 0; z-index: 100;">
+	<nav style="display: flex; align-items: center; justify-content: space-between; max-width: 960px; margin: 0 auto; height: 50px;">
 		
-		<main style="max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem;">
-			
-			<!-- Tu banner/logotipo horizontal es el inicio visual en el centro -->
-			<img src="/banner.jpg" alt="Keylla Henríquez Coach" style="width:100%; height:auto; border-radius:8px; margin-bottom:3.5rem; display:block; box-shadow: 0 4px 12px rgba(0,0,0,0.02);" />
+		<!-- Tu logotipo a la izquierda -->
+		<a href="/" style="display: flex; align-items: center; height: 100%;">
+			<img src="/banner.jpg" alt="Logo HABITARME" style="height: 45px; width: auto; object-fit: contain;" />
+		</a>
 
-			<!-- Tu Texto de Bienvenida con tipografía premium y espaciado fluido -->
-			<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; line-height: 1.9; color: #2d2d2d; letter-spacing: -0.01em;">
-				
-				<p style="margin-bottom: 2rem; font-style: italic; color: #4a4a4a;">
-					Un espacio para poner en palabras aquello que muchas veces permanece dentro: pensamientos, emociones, experiencias, preguntas, descubrimientos y también contradicciones.
-				</p>
-				
-				<p style="margin-bottom: 2rem; font-size: 1.4rem; font-weight: 500; color: #111;">
-					<strong>HABITARME</strong> nace como un espacio para escribir.
-				</p>
-				
-				<p style="margin-bottom: 2rem;">
-					Desde mi propia experiencia.
-					<br />Desde aquello que me conmueve.
-					<br />Desde lo que observo dentro y fuera de mí.
-					<br />Desde las preguntas que aparecen en el camino.
-					<br />Desde este espacio que observo con fascinación.
-				</p>
-				
-				<p style="margin-bottom: 2rem;">
-					Para mirar hacia dentro, para detenerme, para respirar.
-				</p>
-				
-				<h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; text-align: center; margin-top: 5rem; color: #111; letter-spacing: 0.05em;">
-					¡Bienvenidos!
-				</h2>
-			</div>
+		<!-- Enlaces en color blanco -->
+		<div style="display: flex; gap: 2rem;">
+			<a href="/" style="color: #ffffff; text-decoration: none; font-weight: 500; font-size: 1rem;">Inicio</a>
+			<a href="/blog" style="color: #ffffff; text-decoration: none; font-weight: 500; font-size: 1rem;">Blog</a>
+		</div>
 
-		</main>
-
-		<Footer />
-	</body>
-</html>
+	</nav>
+</header>

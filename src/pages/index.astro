@@ -4,8 +4,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-
-// Leemos automáticamente TU artículo original completo de bienvenida
+---
+// Leemos automáticamente TU artículo original completo de bienvenida;
 const post = await getEntry('blog', 'de-que-trata');
 const { Content } import { render } from 'astro:content';
 const { Content } = await render(post);

@@ -7,7 +7,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 // Leemos automáticamente TU artículo original completo de bienvenida
 const post = await getEntry('blog', 'de-que-trata');
-const { Content } = post ? await post.render() : { Content: null };
+const { Content } import { render } from 'astro:content';
+const { Content } = await render(post);
+
 ---
 
 <!doctype html>

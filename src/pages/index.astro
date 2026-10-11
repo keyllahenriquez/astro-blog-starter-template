@@ -16,7 +16,8 @@ const { Content } = post ? await render(post) : { Content: null };
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<link rel="preconnect" href="https://googleapis.com">
 		<link rel="preconnect" href="https://gstatic.com" crossorigin>
-		<link href="https://googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:wght@400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<!-- AQUÍ ESTÁ EL TRUCO: Conectamos oficialmente Caveat, Shadows Into Light y Montserrat para que el blog las reconozca -->
+		<link href="https://googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:wght@400;500&family=Shadows+Into+Light&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 		
 		<style is:global>
 			html, body {
@@ -32,7 +33,6 @@ const { Content } = post ? await render(post) : { Content: null };
 				max-width: 100% !important;
 				width: 100% !important;
 			}
-			/* Forzamos a que ninguna imagen en el banner tenga filtros de opacidad de la plantilla */
 			img {
 				filter: none !important;
 				opacity: 1 !important;
@@ -45,28 +45,27 @@ const { Content } = post ? await render(post) : { Content: null };
 			
 			<!-- BANNER PANORÁMICO REAL (SIN FILTROS NI OPACIDAD) -->
 			<section style="position: relative; width: 100%; height: 460px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; margin: 0; padding: 0;">
-				<!-- Tu imagen del árbol brillante y con toda su luz natural -->
 				<img 
 					src="/blog-placeholder-about.jpg" 
 					alt="Banner Habitarme" 
 					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: none !important; opacity: 1 !important;"
 				/>
 				
-				<!-- MENÚ MINIMALISTA INTEGRADO EN EL BANNER -->
+				<!-- MENÚ MINIMALISTA INTEGRADO -->
 				<nav style="position: absolute; top: 2rem; right: 3rem; z-index: 3; display: flex; gap: 2.5rem;">
 					<a href="/" style="color: #FEFBF1; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Inicio</a>
 					<a href="/blog" style="color: #FEFBF1; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Blog</a>
 					<a href="/acerca-de-mi" style="color: #FEFBF1; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Acerca de mí</a>
 				</nav>
 
-				<!-- TEXTOS ACTUALIZADOS CON Shadows Into Light Y MONTSERRAT -->
+				<!-- TEXTOS CON CONEXIÓN COMPLETA Y FUENTES DE RESPALDO -->
 				<div style="position: relative; z-index: 3; padding: 0 1.5rem; margin-top: 2rem;">
-					<!-- Título: hadows Into Light, en Mayúsculas, color Marfil con sombra suave -->
-					<h1 style="font-family: 'Shadows Into Light'; font-size: 4.5rem; font-weight: 600; margin: 0; color: #FEFBF1; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 0px 2px 8px rgba(0,0,0,0.5); line-height: 1;">
+					<!-- Título: Actualmente configurado con 'Caveat'. Si prefieres la otra, puedes cambiar 'Caveat' por 'Shadows Into Light' -->
+					<h1 style="font-family: 'Caveat', 'Shadows Into Light', cursive; font-size: 6.5rem; font-weight: 600; margin: 0; color: #FEFBF1; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 0px 2px 8px rgba(0,0,0,0.5); line-height: 1;">
 						HABITARME
 					</h1>
-					<!-- Subtítulo: Montserrat (estilo Medium), en Mayúsculas, color Crema Dorado, con espaciado de letras elegante -->
-					<p style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 500; margin-top: 0.5rem; margin-bottom: 0; letter-spacing: 0.28em; color: #FDF2DB; text-transform: uppercase; text-shadow: 0px 2px 6px rgba(0,0,0,0.6);">
+					<!-- Subtítulo: Montserrat con su respectiva fuente de respaldo (sans-serif) -->
+					<p style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 500; margin-top: 1rem; margin-bottom: 0; letter-spacing: 0.28em; color: #FDF2DB; text-transform: uppercase; text-shadow: 0px 2px 6px rgba(0,0,0,0.6);">
 						UN ESPACIO PARA PENSAR, SENTIR Y SER
 					</p>
 				</div>

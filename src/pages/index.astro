@@ -16,11 +16,10 @@ const { Content } = post ? await render(post) : { Content: null };
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<link rel="preconnect" href="https://googleapis.com">
 		<link rel="preconnect" href="https://gstatic.com" crossorigin>
-		<!-- Cargamos una tipografía estilo Brush Script hecha a mano (Rock Salt / Kaushan) y la tipografía limpia de palo seco (Plus Jakarta Sans) -->
-		<link href="https://googleapis.com/css2?family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<!-- Cargamos tus nuevas tipografías: Caveat (manuscrita) y Montserrat (palo seco elegante) -->
+		<link href="https://googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:wght@400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 		
 		<style is:global>
-			/* Eliminamos de manera estricta los márgenes que el navegador o Astro ponen por defecto */
 			html, body {
 				margin: 0 !important;
 				padding: 0 !important;
@@ -28,7 +27,6 @@ const { Content } = post ? await render(post) : { Content: null };
 				max-width: 100% !important;
 				overflow-x: hidden !important;
 			}
-			/* Quitamos márgenes a contenedores automáticos que puedan estar envolviendo el diseño */
 			main {
 				margin: 0 !important;
 				padding: 0 !important;
@@ -50,21 +48,21 @@ const { Content } = post ? await render(post) : { Content: null };
 					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
 				/>
 				
-				<!-- MENÚ MINIMALISTA INTEGRADO EN EL BANNER -->
+				<!-- MENÚ MINIMALISTA INTEGRADO EN EL BANNER (Usando también Montserrat para combinar) -->
 				<nav style="position: absolute; top: 2rem; right: 3rem; z-index: 3; display: flex; gap: 2.5rem;">
-					<a href="/" style="color: #FEFBF1; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.4);">Inicio</a>
-					<a href="/blog" style="color: #FEFBF1; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.4);">Blog</a>
-					<a href="/acerca-de-mi" style="color: #FEFBF1; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.4);">Acerca de mí</a>
+					<a href="/" style="color: #FEFBF1; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.4);">Inicio</a>
+					<a href="/blog" style="color: #FEFBF1; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.4);">Blog</a>
+					<a href="/acerca-de-mi" style="color: #FEFBF1; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.4);">Acerca de mí</a>
 				</nav>
 
-				<!-- TEXTOS OPTIMIZADOS CON TUS ESPECIFICACIONES EXACTAS -->
+				<!-- TEXTOS ACTUALIZADOS CON CAVEAT Y MONTSERRAT -->
 				<div style="position: relative; z-index: 3; padding: 0 1.5rem; margin-top: 2rem;">
-					<!-- Título: Handwritten brush script, en Mayúsculas, color Marfil con sombra suave -->
-					<h1 style="font-family: 'Kaushan Script', 'Brush Script MT', cursive; font-size: 4.8rem; font-weight: 500; margin: 0; color: #FEFBF1; text-transform: uppercase; letter-spacing: -0.01em; text-shadow: 0px 2px 5px rgba(0,0,0,0.35); line-height: 1.1;">
+					<!-- Título: Caveat, en Mayúsculas, color Marfil con sombra suave -->
+					<h1 style="font-family: 'Caveat', cursive; font-size: 6.5rem; font-weight: 600; margin: 0; color: #FEFBF1; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 0px 2px 6px rgba(0,0,0,0.3); line-height: 1;">
 						HABITARME
 					</h1>
-					<!-- Subtítulo: Sans-Serif (palo seco), en Mayúsculas, color Crema Dorado con sombra suave -->
-					<p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 400; margin-top: 1rem; margin-bottom: 0; letter-spacing: 0.18em; color: #FDF2DB; text-transform: uppercase; text-shadow: 0px 2px 4px rgba(0,0,0,0.4);">
+					<!-- Subtítulo: Montserrat (estilo Medium), en Mayúsculas, color Crema Dorado, con espaciado de letras elegante -->
+					<p style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 500; margin-top: 0.5rem; margin-bottom: 0; letter-spacing: 0.28em; color: #FDF2DB; text-transform: uppercase; text-shadow: 0px 2px 4px rgba(0,0,0,0.4);">
 						UN ESPACIO PARA PENSAR, SENTIR Y SER
 					</p>
 				</div>

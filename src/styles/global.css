@@ -153,3 +153,32 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+/* Forzar la carga de fuentes y diseño limpio en el inicio */
+@import url('https://googleapis.com');
+
+html, body, main {
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	overflow-x: hidden !important;
+}
+
+/* Forzar que el título use Caveat de forma obligatoria */
+.titulo-banner {
+	font-family: 'Caveat', cursive !important;
+	text-transform: uppercase !important;
+}
+
+/* Forzar que el subtítulo y menú usen Montserrat */
+.subtitulo-banner, .menu-link {
+	font-family: 'Montserrat', sans-serif !important;
+	text-transform: uppercase !important;
+}
+
+/* Eliminar cualquier filtro oscuro de las imágenes */
+img {
+	filter: none !important;
+	opacity: 1 !important;
+}
+

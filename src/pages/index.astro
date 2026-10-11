@@ -5,7 +5,6 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
-// Leemos automáticamente TU artículo original completo de bienvenida
 const post = await getEntry('blog', 'de-que-trata');
 const { Content } = post ? await render(post) : { Content: null };
 ---
@@ -14,70 +13,38 @@ const { Content } = post ? await render(post) : { Content: null };
 <html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<link rel="preconnect" href="https://googleapis.com">
-		<link rel="preconnect" href="https://gstatic.com" crossorigin>
-		<!-- AQUÍ ESTÁ EL TRUCO: Conectamos oficialmente Caveat, Shadows Into Light y Montserrat para que el blog las reconozca -->
-		<link href="https://googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:wght@400;500&family=Shadows+Into+Light&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-		
-		<style is:global>
-			html, body {
-				margin: 0 !important;
-				padding: 0 !important;
-				width: 100% !important;
-				max-width: 100% !important;
-				overflow-x: hidden !important;
-			}
-			main {
-				margin: 0 !important;
-				padding: 0 !important;
-				max-width: 100% !important;
-				width: 100% !important;
-			}
-			img {
-				filter: none !important;
-				opacity: 1 !important;
-			}
-		</style>
 	</head>
 	<body style="background-color: #fafafa; color: #2c2c2c;">
 		
 		<main>
-			
-			<!-- BANNER PANORÁMICO REAL (SIN FILTROS NI OPACIDAD) -->
 			<section style="position: relative; width: 100%; height: 460px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; margin: 0; padding: 0;">
 				<img 
 					src="/blog-placeholder-about.jpg" 
 					alt="Banner Habitarme" 
-					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: none !important; opacity: 1 !important;"
+					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
 				/>
 				
-				<!-- MENÚ MINIMALISTA INTEGRADO -->
 				<nav style="position: absolute; top: 2rem; right: 3rem; z-index: 3; display: flex; gap: 2.5rem;">
-					<a href="/" style="color: #FEFBF1; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Inicio</a>
-					<a href="/blog" style="color: #FEFBF1; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Blog</a>
-					<a href="/acerca-de-mi" style="color: #FEFBF1; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Acerca de mí</a>
+					<a href="/" class="menu-link" style="color: #FEFBF1; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Inicio</a>
+					<a href="/blog" class="menu-link" style="color: #FEFBF1; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Blog</a>
+					<a href="/acerca-de-mi" class="menu-link" style="color: #FEFBF1; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Acerca de mí</a>
 				</nav>
 
-				<!-- TEXTOS CON CONEXIÓN COMPLETA Y FUENTES DE RESPALDO -->
 				<div style="position: relative; z-index: 3; padding: 0 1.5rem; margin-top: 2rem;">
-					<!-- Título: Actualmente configurado con 'Caveat'. Si prefieres la otra, puedes cambiar 'Caveat' por 'Shadows Into Light' -->
-					<h1 style="font-family: 'Caveat', 'Shadows Into Light', cursive; font-size: 6.5rem; font-weight: 600; margin: 0; color: #FEFBF1; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 0px 2px 8px rgba(0,0,0,0.5); line-height: 1;">
+					<h1 class="titulo-banner" style="font-size: 6.5rem; font-weight: 600; margin: 0; color: #FEFBF1; letter-spacing: 0.02em; text-shadow: 0px 2px 8px rgba(0,0,0,0.5); line-height: 1;">
 						HABITARME
 					</h1>
-					<!-- Subtítulo: Montserrat con su respectiva fuente de respaldo (sans-serif) -->
-					<p style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 500; margin-top: 1rem; margin-bottom: 0; letter-spacing: 0.28em; color: #FDF2DB; text-transform: uppercase; text-shadow: 0px 2px 6px rgba(0,0,0,0.6);">
+					<p class="subtitulo-banner" style="font-size: 0.95rem; font-weight: 500; margin-top: 1rem; margin-bottom: 0; letter-spacing: 0.28em; color: #FDF2DB; text-shadow: 0px 2px 6px rgba(0,0,0,0.6);">
 						UN ESPACIO PARA PENSAR, SENTIR Y SER
 					</p>
 				</div>
 			</section>
 
-			<!-- ESPACIO DE LECTURA (TEXTO INFERIOR POÉTICO) -->
 			<div style="max-width: 680px; margin: 0 auto; padding: 5rem 1.5rem 6rem 1.5rem;">
 				<article style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; line-height: 1.9; color: #2d2d2d; letter-spacing: -0.01em;">
 					{Content ? <Content /> : <p>Cargando bienvenida...</p>}
 				</article>
 			</div>
-
 		</main>
 
 		<Footer />

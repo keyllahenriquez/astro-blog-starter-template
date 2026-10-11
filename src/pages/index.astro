@@ -11,31 +11,39 @@ const { Content } = post ? await render(post) : { Content: null };
 ---
 
 <!doctype html>
-<html lang="es" style="margin: 0; padding: 0; width: 100%;">
+<html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<link rel="preconnect" href="https://googleapis.com">
 		<link rel="preconnect" href="https://gstatic.com" crossorigin>
-		<!-- Cargamos las tipografías: Caveat (Estilo manuscrito para el título) y Plus Jakarta Sans -->
-		<link href="https://googleapis.com/css2?family=Caveat:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+		<!-- Cargamos una tipografía estilo Brush Script hecha a mano (Rock Salt / Kaushan) y la tipografía limpia de palo seco (Plus Jakarta Sans) -->
+		<link href="https://googleapis.com/css2?family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 		
 		<style is:global>
-			/* Forzamos a que la página elimine cualquier margen invisible de raíz */
+			/* Eliminamos de manera estricta los márgenes que el navegador o Astro ponen por defecto */
 			html, body {
 				margin: 0 !important;
 				padding: 0 !important;
 				width: 100% !important;
-				overflow-x: hidden;
+				max-width: 100% !important;
+				overflow-x: hidden !important;
+			}
+			/* Quitamos márgenes a contenedores automáticos que puedan estar envolviendo el diseño */
+			main {
+				margin: 0 !important;
+				padding: 0 !important;
+				max-width: 100% !important;
+				width: 100% !important;
 			}
 		</style>
 	</head>
-	<body style="font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fafafa; color: #2c2c2c; margin: 0; padding: 0; width: 100%;">
+	<body style="background-color: #fafafa; color: #2c2c2c;">
 		
-		<main style="width: 100%; margin: 0; padding: 0;">
+		<main>
 			
-			<!-- BANNER PANORÁMICO BRILLANTE (DE BORDE A BORDE) -->
-			<section style="position: relative; width: 100vw; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; height: 440px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden;">
-				<!-- Tu imagen del árbol con su brillo natural, sin capas oscuras encima -->
+			<!-- BANNER PANORÁMICO (DE BORDE A BORDE REAL SIN MÁRGENES) -->
+			<section style="position: relative; width: 100%; height: 460px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; margin: 0; padding: 0;">
+				<!-- Tu imagen del árbol brillante y con toda su luz natural -->
 				<img 
 					src="/blog-placeholder-about.jpg" 
 					alt="Banner Habitarme" 
@@ -43,21 +51,21 @@ const { Content } = post ? await render(post) : { Content: null };
 				/>
 				
 				<!-- MENÚ MINIMALISTA INTEGRADO EN EL BANNER -->
-				<nav style="position: absolute; top: 2rem; right: 4rem; z-index: 3; display: flex; gap: 2.5rem;">
-					<a href="/" style="color: #2c2c2c; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: 0.05em;">Inicio</a>
-					<a href="/blog" style="color: #2c2c2c; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: 0.05em;">Blog</a>
-					<a href="/acerca-de-mi" style="color: #2c2c2c; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: 0.05em;">Acerca de mí</a>
+				<nav style="position: absolute; top: 2rem; right: 3rem; z-index: 3; display: flex; gap: 2.5rem;">
+					<a href="/" style="color: #FEFBF1; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.4);">Inicio</a>
+					<a href="/blog" style="color: #FEFBF1; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.4);">Blog</a>
+					<a href="/acerca-de-mi" style="color: #FEFBF1; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.4);">Acerca de mí</a>
 				</nav>
 
-				<!-- TEXTOS CON EL ESTILO ORGÁNICO DE TU REFERENCIA -->
-				<div style="position: relative; z-index: 3; padding: 0 1.5rem; margin-top: 3rem;">
-					<!-- Título manuscrito y cálido en un tono marrón suave orgánico -->
-					<h1 style="font-family: 'Caveat', cursive; font-size: 6rem; font-weight: 500; margin: 0; color: #5c4d42; line-height: 1;">
+				<!-- TEXTOS OPTIMIZADOS CON TUS ESPECIFICACIONES EXACTAS -->
+				<div style="position: relative; z-index: 3; padding: 0 1.5rem; margin-top: 2rem;">
+					<!-- Título: Handwritten brush script, en Mayúsculas, color Marfil con sombra suave -->
+					<h1 style="font-family: 'Kaushan Script', 'Brush Script MT', cursive; font-size: 4.8rem; font-weight: 500; margin: 0; color: #FEFBF1; text-transform: uppercase; letter-spacing: -0.01em; text-shadow: 0px 2px 5px rgba(0,0,0,0.35); line-height: 1.1;">
 						HABITARME
 					</h1>
-					<!-- Subtítulo limpio en mayúsculas -->
-					<p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 500; margin-top: 0.5rem; margin-bottom: 0; letter-spacing: 0.15em; color: #6e5d51; text-transform: uppercase;">
-						un espacio para pensar, sentir y ser
+					<!-- Subtítulo: Sans-Serif (palo seco), en Mayúsculas, color Crema Dorado con sombra suave -->
+					<p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 400; margin-top: 1rem; margin-bottom: 0; letter-spacing: 0.18em; color: #FDF2DB; text-transform: uppercase; text-shadow: 0px 2px 4px rgba(0,0,0,0.4);">
+						UN ESPACIO PARA PENSAR, SENTIR Y SER
 					</p>
 				</div>
 			</section>

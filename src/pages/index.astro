@@ -11,49 +11,58 @@ const { Content } = post ? await render(post) : { Content: null };
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" style="margin: 0; padding: 0; width: 100%;">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<link rel="preconnect" href="https://googleapis.com">
 		<link rel="preconnect" href="https://gstatic.com" crossorigin>
-		<link href="https://googleapis.com" rel="stylesheet">
-	</head>
-	<body style="font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fafafa; color: #2c2c2c; margin: 0; padding: 0;">
+		<!-- Cargamos las tipografías: Caveat (Estilo manuscrito para el título) y Plus Jakarta Sans -->
+		<link href="https://googleapis.com/css2?family=Caveat:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 		
-		<!-- Eliminamos el <Header /> viejo para quitar la barra negra con el logo -->
+		<style is:global>
+			/* Forzamos a que la página elimine cualquier margen invisible de raíz */
+			html, body {
+				margin: 0 !important;
+				padding: 0 !important;
+				width: 100% !important;
+				overflow-x: hidden;
+			}
+		</style>
+	</head>
+	<body style="font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fafafa; color: #2c2c2c; margin: 0; padding: 0; width: 100%;">
 		
 		<main style="width: 100%; margin: 0; padding: 0;">
 			
-			<!-- BANNER ÚNICO ALARGADO CON MENÚ INTEGRADO -->
-			<section style="position: relative; width: 100%; height: 460px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; overflow: hidden;">
-				<!-- Imagen de fondo estirada en forma de tira -->
+			<!-- BANNER PANORÁMICO BRILLANTE (DE BORDE A BORDE) -->
+			<section style="position: relative; width: 100vw; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; height: 440px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden;">
+				<!-- Tu imagen del árbol con su brillo natural, sin capas oscuras encima -->
 				<img 
 					src="/blog-placeholder-about.jpg" 
 					alt="Banner Habitarme" 
 					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
 				/>
-				<!-- Capa oscura intermedia para leer bien las letras blancas -->
-				<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); z-index: 2;"></div>
 				
-				<!-- NUEVO MENÚ INTEGRADO (Flotando arriba a la derecha) -->
-				<nav style="position: absolute; top: 2rem; right: 3rem; z-index: 3; display: flex; gap: 2rem;">
-					<a href="/" style="color: white; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Inicio</a>
-					<a href="/blog" style="color: white; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Blog</a>
-					<a href="/acerca-de-mi" style="color: white; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Acerca de mí</a>
+				<!-- MENÚ MINIMALISTA INTEGRADO EN EL BANNER -->
+				<nav style="position: absolute; top: 2rem; right: 4rem; z-index: 3; display: flex; gap: 2.5rem;">
+					<a href="/" style="color: #2c2c2c; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: 0.05em;">Inicio</a>
+					<a href="/blog" style="color: #2c2c2c; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: 0.05em;">Blog</a>
+					<a href="/acerca-de-mi" style="color: #2c2c2c; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: 0.05em;">Acerca de mí</a>
 				</nav>
 
-				<!-- Tus palabras sobrepuestas en la imagen -->
-				<div style="position: relative; z-index: 3; padding: 0 1.5rem; margin-top: 2rem;">
-					<h1 style="font-family: 'Playfair Display', serif; font-size: 3.8rem; font-weight: 600; margin: 0; letter-spacing: -0.02em; text-shadow: 0 2px 12px rgba(0,0,0,0.4);">
+				<!-- TEXTOS CON EL ESTILO ORGÁNICO DE TU REFERENCIA -->
+				<div style="position: relative; z-index: 3; padding: 0 1.5rem; margin-top: 3rem;">
+					<!-- Título manuscrito y cálido en un tono marrón suave orgánico -->
+					<h1 style="font-family: 'Caveat', cursive; font-size: 6rem; font-weight: 500; margin: 0; color: #5c4d42; line-height: 1;">
 						HABITARME
 					</h1>
-					<p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 300; margin-top: 0.8rem; margin-bottom: 0; letter-spacing: 0.05em; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">
+					<!-- Subtítulo limpio en mayúsculas -->
+					<p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 500; margin-top: 0.5rem; margin-bottom: 0; letter-spacing: 0.15em; color: #6e5d51; text-transform: uppercase;">
 						un espacio para pensar, sentir y ser
 					</p>
 				</div>
 			</section>
 
-			<!-- ESPACIO DE LECTURA (TEXTO INFERIOR) -->
+			<!-- ESPACIO DE LECTURA (TEXTO INFERIOR POÉTICO) -->
 			<div style="max-width: 680px; margin: 0 auto; padding: 5rem 1.5rem 6rem 1.5rem;">
 				<article style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; line-height: 1.9; color: #2d2d2d; letter-spacing: -0.01em;">
 					{Content ? <Content /> : <p>Cargando bienvenida...</p>}

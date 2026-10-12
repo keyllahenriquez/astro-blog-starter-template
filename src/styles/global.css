@@ -153,7 +153,7 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
-/* Forzar la carga de fuentes y diseño limpio en el inicio */
+/* Forzar la carga de la fuente exacta de tu imagen (Amatic SC) y Montserrat */
 @import url('https://googleapis.com');
 
 html, body, main {
@@ -164,21 +164,20 @@ html, body, main {
 	overflow-x: hidden !important;
 }
 
-/* Forzar que el título use Caveat de forma obligatoria */
+/* Forzar que el título use la letra exacta alta y manuscrita de tu foto */
 .titulo-banner {
-	font-family: 'Caveat', cursive !important;
+	font-family: 'Amatic SC', sans-serif !important;
 	text-transform: uppercase !important;
+	font-weight: 700 !important;
 }
 
-/* Forzar que el subtítulo y menú usen Montserrat */
+/* Forzar el estilo de la frase y el menú */
 .subtitulo-banner, .menu-link {
 	font-family: 'Montserrat', sans-serif !important;
 	text-transform: uppercase !important;
 }
 
-/* Eliminar cualquier filtro oscuro de las imágenes */
 img {
 	filter: none !important;
 	opacity: 1 !important;
 }
-

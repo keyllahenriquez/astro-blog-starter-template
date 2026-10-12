@@ -164,22 +164,33 @@ html, body, main {
 	overflow-x: hidden !important;
 }
 
-/* Forzar que el título use la letra exacta alta y manuscrita de tu foto */
-.titulo-banner {
-	font-family: 'Amatic SC', sans-serif !important;
-	text-transform: uppercase !important;
-	font-weight: 700 !important;
+/* 1. Importación directa desde Google Fonts */
+@import url('https://googleapis.com');
+
+/* 2. Clase para el Título Manuscrito */
+.titulo-manuscrito {
+  font-family: 'Caveat', cursive, sans-serif !important;
+  font-size: 6.5rem !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  text-transform: none !important; /* Mantiene el formato natural de la fuente manuscrita */
+  margin: 0 !important;
+  color: #FFFFFF !important;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3) !important;
+  line-height: 0.9 !important;
+  letter-spacing: 0.02em !important;
 }
 
-/* Forzar el estilo de la frase y el menú */
-.subtitulo-banner, .menu-link {
-	font-family: 'Montserrat', sans-serif !important;
-	text-transform: uppercase !important;
+/* 3. Clase para el Subtítulo Limpio y Espaciado */
+.subtitulo-limpio {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0 !important;
+  letter-spacing: 0.35em !important;
+  color: #FFFFFF !important;
+  text-transform: uppercase !important;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4) !important;
 }
-
-img {
-	filter: none !important;
-	opacity: 1 !important;
-}
-
-h1 { font-family: 'Amatic SC', sans-serif !important; }

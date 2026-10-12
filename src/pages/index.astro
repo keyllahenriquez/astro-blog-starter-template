@@ -15,13 +15,18 @@ const { Content } = post ? await render(post) : { Content: null };
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		
-		<!-- NUEVAS FUENTES: Caveat (Manuscrita) y Montserrat (Sans-serif limpia) -->
-		<link rel="preconnect" href="https://googleapis.com">
+		<!-- 1. Carga de Google Fonts en el Head (HTML) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://gstatic.com" crossorigin>
-		<link href="https://googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+		<link href="https://googleapis.com" rel="stylesheet">
 	</head>
 	<body style="background-color: #fafafa; color: #2c2c2c; margin: 0; padding: 0;">
 		
+		<!-- 2. Respaldo de Importación Global de CSS para asegurar compatibilidad en Astro -->
+		<style is:global>
+			@import url('https://googleapis.com');
+		</style>
+
 		<main style="margin: 0; padding: 0; width: 100%;">
 			<!-- BANNER PRINCIPAL DE BORDE A BORDE -->
 			<section style="position: relative; width: 100%; height: 470px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; margin: 0; padding: 0;">
@@ -40,14 +45,14 @@ const { Content } = post ? await render(post) : { Content: null };
 					<a href="/acerca-de-mi" style="color: #FFFFFF; text-decoration: none; font-size: 1rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Acerca de mí</a>
 				</nav>
 
-				<!-- TEXTOS ACTUALIZADOS SEGÚN LA IMAGEN DE REFERENCIA -->
+				<!-- TEXTOS ACTUALIZADOS CON MÁXIMA ESPECIFICIDAD CSS -->
 				<div style="position: relative; z-index: 3; padding: 0 1.5rem; margin-top: 2rem;">
-					<!-- Título: Implementación de la tipografía manuscrita Caveat -->
-					<h1 style="font-family: 'Caveat', 'Playfair Display', Georgia, cursive !important; font-size: 6rem; font-weight: 400; margin: 0; color: #FFFFFF; text-shadow: 0px 2px 6px rgba(0,0,0,0.3); line-height: 0.9; letter-spacing: 0.02em;">
+					<!-- Título: Forzando Caveat con !important y removiendo itálicas -->
+					<h1 style="font-family: 'Caveat', cursive !important; font-size: 6rem !important; font-weight: 400 !important; font-style: normal !important; margin: 0; color: #FFFFFF !important; text-shadow: 0px 2px 6px rgba(0,0,0,0.3); line-height: 0.9; letter-spacing: 0.02em;">
 						HABITARME
 					</h1>
-					<!-- Subtítulo: Tipografía Montserrat con la frase y espaciado de la imagen 2 -->
-					<p style="font-family: 'Montserrat', sans-serif !important; font-size: 0.9rem; font-weight: 500; margin-top: 1.5rem; margin-bottom: 0; letter-spacing: 0.35em; color: #FFFFFF; text-transform: uppercase; text-shadow: 0px 2px 6px rgba(0,0,0,0.4);">
+					<!-- Subtítulo: Forzando Montserrat con !important y espaciado de la imagen 2 -->
+					<p style="font-family: 'Montserrat', sans-serif !important; font-size: 0.9rem !important; font-weight: 500 !important; font-style: normal !important; margin-top: 1.5rem; margin-bottom: 0; letter-spacing: 0.35em !important; color: #FFFFFF !important; text-transform: uppercase; text-shadow: 0px 2px 6px rgba(0,0,0,0.4);">
 						UN ESPACIO PARA PENSAR, SENTIR Y SER
 					</p>
 				</div>
@@ -64,4 +69,3 @@ const { Content } = post ? await render(post) : { Content: null };
 		<Footer />
 	</body>
 </html>
-

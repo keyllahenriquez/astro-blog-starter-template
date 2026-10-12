@@ -14,6 +14,11 @@ const { Content } = post ? await render(post) : { Content: null };
 <html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		
+		<!-- NUEVAS FUENTES: Caveat (Manuscrita) y Montserrat (Sans-serif limpia) -->
+		<link rel="preconnect" href="https://googleapis.com">
+		<link rel="preconnect" href="https://gstatic.com" crossorigin>
+		<link href="https://googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 	</head>
 	<body style="background-color: #fafafa; color: #2c2c2c; margin: 0; padding: 0;">
 		
@@ -35,15 +40,15 @@ const { Content } = post ? await render(post) : { Content: null };
 					<a href="/acerca-de-mi" style="color: #FFFFFF; text-decoration: none; font-size: 1rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Acerca de mí</a>
 				</nav>
 
-				<!-- TEXTOS CONFIGURADOS CON LAS FUENTES INTERNAS DE TU BLOG -->
+				<!-- TEXTOS ACTUALIZADOS SEGÚN LA IMAGEN DE REFERENCIA -->
 				<div style="position: relative; z-index: 3; padding: 0 1.5rem; margin-top: 2rem;">
-					<!-- Título: Usando la fuente elegante nativa de tu blog, tamaño 4.5rem -->
-					<h1 style="font-family: 'Playfair Display', Georgia, serif !important; font-size: 4.5rem; font-weight: 400; font-style: italic; margin: 0; color: #FFFFFF; text-shadow: 0px 2px 6px rgba(0,0,0,0.4); line-height: 1;">
+					<!-- Título: Implementación de la tipografía manuscrita Caveat -->
+					<h1 style="font-family: 'Caveat', 'Playfair Display', Georgia, cursive !important; font-size: 6rem; font-weight: 400; margin: 0; color: #FFFFFF; text-shadow: 0px 2px 6px rgba(0,0,0,0.3); line-height: 0.9; letter-spacing: 0.02em;">
 						HABITARME
 					</h1>
-					<!-- Subtítulo: Usando la fuente limpia nativa de tu blog, tamaño 0.8rem con espaciado -->
-					<p style="font-size: 0.8rem; font-weight: 500; margin-top: 1.2rem; margin-bottom: 0; letter-spacing: 0.25em; color: #FFFFFF; text-transform: uppercase; text-shadow: 0px 2px 6px rgba(0,0,0,0.5);">
-						UN ESPACIO PARA SOLTAR, SENTIR Y SER
+					<!-- Subtítulo: Tipografía Montserrat con la frase y espaciado de la imagen 2 -->
+					<p style="font-family: 'Montserrat', sans-serif !important; font-size: 0.9rem; font-weight: 500; margin-top: 1.5rem; margin-bottom: 0; letter-spacing: 0.35em; color: #FFFFFF; text-transform: uppercase; text-shadow: 0px 2px 6px rgba(0,0,0,0.4);">
+						UN ESPACIO PARA PENSAR, SENTIR Y SER
 					</p>
 				</div>
 			</section>
@@ -59,3 +64,4 @@ const { Content } = post ? await render(post) : { Content: null };
 		<Footer />
 	</body>
 </html>
+

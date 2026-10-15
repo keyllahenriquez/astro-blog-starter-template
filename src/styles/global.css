@@ -168,7 +168,8 @@ html, body, main {
 @import url('https://googleapis.com');
 
 /* 2. Clase para el Título Manuscrito */
-.titulo-manuscrito {
+.titulo-manuscrito 
+{
   font-family: 'Caveat', cursive, sans-serif !important;
   font-size: 6.5rem !important;
   font-weight: 400 !important;
@@ -182,15 +183,11 @@ html, body, main {
 }
 
 /* 3. Clase para el Subtítulo Limpio y Espaciado */
-.subtitulo-limpio {
-  font-family: 'Montserrat', sans-serif !important;
-  font-size: 0.9rem !important;
-  font-weight: 500 !important;
-  font-style: normal !important;
-  margin-top: 1.5rem !important;
-  margin-bottom: 0 !important;
-  letter-spacing: 0.35em !important;
-  color: #FFFFFF !important;
-  text-transform: uppercase !important;
-  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4) !important;
-}
+.subtitulo-limpio 
+{
+.josefin-sans-<uniquifier> {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}	

@@ -5,11 +5,7 @@ pubDate: "Oct 04 2026"
 heroImage: "/blog-placeholder-about.jpg"
 ---
 
-HABITARME
-
-Es un espacio para poner en palabras aquello que muchas veces permanece dentro: pensamientos, emociones, experiencias, preguntas, descubrimientos y también contradicciones.
-
-HABITARME nace como un espacio para escribir.
+HABITARME nace como un espacio para escribir, para poner en palabras aquello que muchas veces permanece dentro: pensamientos, emociones, experiencias, preguntas, descubrimientos y también contradicciones.
 
 Desde mi propia experiencia.
 Desde aquello que me conmueve.

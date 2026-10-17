@@ -144,17 +144,11 @@ hr {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
 	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
 	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
 	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
-/* Forzar la carga de la fuente exacta de tu imagen (Amatic SC) y Montserrat */
-@import url('https://googleapis.com');
 
 html, body, main {
 	margin: 0 !important;
@@ -164,29 +158,21 @@ html, body, main {
 	overflow-x: hidden !important;
 }
 
-/* 1. Importación directa desde Google Fonts */
-@import url('https://googleapis.com');
-
-/* 2. Clase para el Título Manuscrito */
-.titulo-manuscrito 
-{
-  .shadows-into-light-regular {
-  font-family: "Shadows Into Light", cursive;
-  font-weight: 400;
-  font-style: normal;
-  margin: 0 !important;
-  color: #FFFFFF !important;
-  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3) !important;
-  line-height: 0.9 !important;
-  letter-spacing: 0.02em !important;
+/* Clases personalizadas de tipografía */
+.titulo-manuscrito {
+	font-family: "Shadows Into Light", cursive;
+	font-weight: 400;
+	font-style: normal;
+	margin: 0 !important;
+	color: #FFFFFF !important;
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3) !important;
+	line-height: 0.9 !important;
+	letter-spacing: 0.02em !important;
 }
 
-/* 3. Clase para el Subtítulo Limpio y Espaciado */
-.subtitulo-limpio 
-
-.josefin-sans-<uniquifier> {
-  font-family: "Josefin Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}	
+.subtitulo-limpio {
+	font-family: "Josefin Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}

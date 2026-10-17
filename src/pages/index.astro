@@ -1,71 +1,31 @@
 ---
-import { getEntry } from 'astro:content';
-import { render } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+<!-- BANNER PRINCIPAL DE BORDE A BORDE -->
+<section style="position: relative; width: 100%; height: 470px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; margin: 0; padding: 0;">
+	
+	<!-- Tu imagen del árbol con su luz natural -->
+	<img 
+		src="/blog-placeholder-about.jpg" 
+		alt="Banner Habitarme" 
+		style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
+	/>
+	
+	<!-- MENÚ MINIMALISTA EN LA ESQUINA SUPERIOR -->
+	<nav style="position: absolute; top: 2rem; right: 3rem; z-index: 3; display: flex; gap: 2.5rem;">
+		<a href="/" style="color: #FFFFFF; text-decoration: none; font-size: 1.2rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Inicio</a>
+		<a href="/blog" style="color: #FFFFFF; text-decoration: none; font-size: 1.2rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Blog</a>
+		<a href="/acerca-de-mi" style="color: #FFFFFF; text-decoration: none; font-size: 1.2rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Acerca de mí</a>
+	</nav>
 
-// Leemos automáticamente TU artículo original completo de bienvenida
-const post = await getEntry('blog', 'de-que-trata');
-const { Content } = post ? await render(post) : { Content: null };
----
+	<!-- TEXTOS DEL BANNER CON ESTILOS DIRECTOS -->
+	<div style="position: relative; z-index: 2; padding: 0 1.5rem; margin-top: 2rem;">
+		<h1 style="font-family: 'Shadows Into Light', cursive; font-size: 5rem; font-weight: 400; color: #FFFFFF; text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5); letter-spacing: 0.08em; margin: 0; line-height: 1;">
+			HABITARME
+		</h1>
 
-<!doctype html>
-<html lang="es">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-	</head>
-	<body style="background-color: #fafafa; color: #2c2c2c; margin: 0; padding: 0;">
-		
-		<main style="margin: 0; padding: 0; width: 100%;">
-			<!-- BANNER PRINCIPAL DE BORDE A BORDE -->
-			<section style="position: relative; width: 100%; height: 470px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; margin: 0; padding: 0;">
-				
-				<!-- Tu imagen del árbol con su luz natural -->
-				<img 
-					src="/blog-placeholder-about.jpg" 
-					alt="Banner Habitarme" 
-					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
-				/>
-				
-				<!-- MENÚ MINIMALISTA EN LA ESQUINA SUPERIOR -->
-				<nav style="position: absolute; top: 2rem; right: 3rem; z-index: 3; display: flex; gap: 2.5rem;">
-					<a href="/" style="color: #FFFFFF; text-decoration: none; font-size: 1.2rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Inicio</a>
-					<a href="/blog" style="color: #FFFFFF; text-decoration: none; font-size: 1.2rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Blog</a>
-					<a href="/acerca-de-mi" style="color: #FFFFFF; text-decoration: none; font-size: 1.2rem; font-weight: 500; letter-spacing: 0.05em; text-shadow: 0px 2px 4px rgba(0,0,0,0.6);">Acerca de mí</a>
-				</nav>
-
-				
-				<!-- TEXTOS CONECTADOS A LAS CLASES DE GLOBAL.CSS -->
-				<div style="position: relative; z-index: 2; padding: 0 1.5rem; margin-top: 2rem;">
-					<h1>
-						HABITARME
-					</h1>
-
-					<!-- Subtítulo limpio usando la clase global -->
-					<div class="subtitulo-limpio">
-						<h4>    
-							UN ESPACIO PARA SER, SENTIR Y SOLTAR
-						</h4>
-					</div>
-				</div>
-			</section>
-
-			<!-- ESPACIO DE LECTURA (TEXTO INFERIOR POÉTICO) -->
-			<div style="max-width: 680px; margin: 0 auto; padding: 5rem 1.5rem 6rem 1.5rem;">
-				<article style="font-family: 'Josefin Sans', sans-serif; font-size: 1.50rem; line-height: 1.9; color: #2d2d2d; letter-spacing: -0.01em;">
-					{Content ? <Content /> : <p>Cargando bienvenida...</p>}
-				</article>
-			</div>
-		</main>
-
-		<Footer />
-	</body>
-</html>
+		<div class="subtitulo-limpio">
+			<h4 style="font-family: 'Josefin Sans', sans-serif; font-size: 1.25rem; font-weight: 300; color: #FFFFFF; text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5); letter-spacing: 0.2em; margin-top: 0.5rem;">
+				UN ESPACIO PARA SER, SENTIR Y SOLTAR
+			</h4>
+		</div>
+	</div>
+</section>

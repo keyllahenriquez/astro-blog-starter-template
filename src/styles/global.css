@@ -1,8 +1,6 @@
-/* Clases personalizadas de tipografía para el Banner */
 .titulo-manuscrito {
 	font-family: "Shadows Into Light", cursive !important;
 	font-weight: 400 !important;
-	font-style: normal;
 	font-size: 4rem !important;
 	margin: 0 !important;
 	color: #FFFFFF !important;
@@ -12,9 +10,7 @@
 
 .subtitulo-limpio h4 {
 	font-family: "Josefin Sans", sans-serif !important;
-	font-optical-sizing: auto;
-	font-weight: 300 !important; /* Peso ligero requerido */
-	font-style: normal;
+	font-weight: 300 !important;
 	font-size: 1.3rem !important;
 	color: #FFFFFF !important;
 	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4) !important;

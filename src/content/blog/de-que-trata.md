@@ -7,7 +7,7 @@ heroImage: "/blog-placeholder-about.jpg"
 
 HABITARME nace como un espacio para escribir, para poner en palabras aquello que muchas veces permanece dentro: pensamientos, emociones, experiencias, preguntas, descubrimientos y también contradicciones.
 
-Desde mi propia experiencia.
+Desde mi propia experiencia. 
 Desde aquello que me conmueve.
 Desde lo que observo dentro y fuera de mí.
 Desde las preguntas que aparecen en el camino.

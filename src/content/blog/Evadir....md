@@ -1,5 +1,6 @@
 ---
 title: 'Evadir...'
+description: 'No hacerse cargo de lo que sentimos, trae consecuencias.'
 pubDate: '2026-08-18'
 ---
 

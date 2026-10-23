@@ -1,3 +1,10 @@
+body {
+	background-color: #E5D8C1 !important;
+	color: #2b2b2b;
+	margin: 0;
+	padding: 0;
+}
+
 .titulo-manuscrito {
 	font-family: "Shadows Into Light", cursive !important;
 	font-weight: 400 !important;

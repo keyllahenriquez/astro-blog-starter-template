@@ -3,20 +3,21 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header style="width: 100%; background-color: #161616; padding: 1.2rem 0; box-sizing: border-box;">
+<!-- Reducimos el padding de 1.2rem a 0.6rem para hacer la tira más fina -->
+<header style="width: 100%; background-color: #161616; padding: 0.6rem 0; box-sizing: border-box;">
 	<nav style="max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center;">
-		<!-- 1. Nombre "HABITARME" a la izquierda (sin la imagen) -->
+		<!-- Logo "HABITARME" ligeramente más pequeño para ajustarse al alto fino -->
 		<h2>
-			<a href="/" style="font-family: 'Shadows Into Light', cursive; font-size: 2.2rem; color: #ffffff; text-decoration: none; font-weight: 400; letter-spacing: 0.05em; margin: 0;">
+			<a href="/" style="font-family: 'Shadows Into Light', cursive; font-size: 1.8rem; color: #ffffff; text-decoration: none; font-weight: 400; letter-spacing: 0.05em; margin: 0;">
 				HABITARME
 			</a>
 		</h2>
 
-		<!-- 2. Menú de navegación a la derecha con "Acerca de mí" en mayúscula inicial -->
+		<!-- Opciones de navegación -->
 		<div style="display: flex; gap: 1.8rem; align-items: center;">
-			<HeaderLink href="/" style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; text-decoration: none; font-weight: 300;">Inicio</HeaderLink>
-			<HeaderLink href="/blog" style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; text-decoration: none; font-weight: 300;">Blog</HeaderLink>
-			<HeaderLink href="/about" style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; text-decoration: none; font-weight: 300;">Acerca de mí</HeaderLink>
+			<HeaderLink href="/" style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 0.95rem; text-decoration: none; font-weight: 300;">Inicio</HeaderLink>
+			<HeaderLink href="/blog" style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 0.95rem; text-decoration: none; font-weight: 300;">Blog</HeaderLink>
+			<HeaderLink href="/about" style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 0.95rem; text-decoration: none; font-weight: 300;">Acerca de mí</HeaderLink>
 		</div>
 	</nav>
 </header>

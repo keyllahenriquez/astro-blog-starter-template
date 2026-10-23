@@ -31,7 +31,7 @@ const posts = (await getCollection('blog')).sort(
 
 			.blog-title {
 				font-family: 'Shadows Into Light', cursive;
-				font-size: 3.5rem;
+				font-size: 3.0rem;
 				color: #2b2b2b;
 				margin-bottom: 0.2rem;
 			}
@@ -39,9 +39,9 @@ const posts = (await getCollection('blog')).sort(
 			.blog-subtitle {
 				font-family: 'Josefin Sans', sans-serif;
 				font-weight: 300;
-				font-size: 1.1rem;
+				font-size: 0.9rem;
 				color: #555555;
-				letter-spacing: 0.08em;
+				letter-spacing: 0.06em;
 			}
 
 			/* Listado de entradas estilo editorial */
@@ -96,18 +96,11 @@ const posts = (await getCollection('blog')).sort(
 				margin: 0;
 			}
 		</style>
-	</head>
+
 	<body>
 		<!-- Menú superior limpio -->
-		<Header />
-
+		
 		<main>
-			<!-- 2. ENCABEZADO SOBRIO -->
-			<section class="blog-header">
-				<h1 class="blog-title">Bitácora</h1>
-				<p class="blog-subtitle">Palabras, reflexiones y aprendizajes</p>
-			</section>
-
 			<!-- 3. LISTADO VERTICAL LIMPIO (SIN IMÁGENES) -->
 			<section>
 				<ul class="posts-list">

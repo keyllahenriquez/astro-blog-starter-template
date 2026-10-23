@@ -2,62 +2,69 @@
 const today = new Date();
 ---
 
-<footer style="width: 100%; background-color: #161616; color: #f0f0f0; padding: 1.2rem 0; text-align: center; margin-top: 2.5rem; box-sizing: border-box;">
-	<div style="max-width: 800px; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.6rem;">
+<footer style="width: 100%; background-color: #161616; color: #f0f0f0; padding: 1.5rem 0; margin-top: 3rem; box-sizing: border-box;">
+	<div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
 		
-		<!-- 1. LOGOTIPO (Ligeramente más compacto) -->
-		<img 
-			src="/logo.png" 
-			alt="Logo Keylla Henríquez" 
-			style="width: 300px; max-width: 100%; height: auto; display: block; margin: 0 auto;" 
-		/>
+		<!-- LATERAL IZQUIERDO: LOGOTIPO EN TAMAÑO PROTAGONISTA (300px) -->
+		<div style="display: flex; align-items: center;">
+			<img 
+				src="/logo.png" 
+				alt="Logo Keylla Henríquez" 
+				style="width: 290px; max-width: 100%; height: auto; display: block;" 
+			/>
+		</div>
 
-		<!-- 2. TEXTO DE CONTACTO -->
-		<p style="font-family: 'Josefin Sans', sans-serif; font-size: 0.9rem; font-weight: 400; color: #ffffff; margin: 0; letter-spacing: 0.05em;">
-			Comunícate conmigo:
-		</p>
-
-		<!-- 3. ENLACES CON ÍCONOS -->
-		<div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+		<!-- LATERAL DERECHO: CONTACTO, ENLACES Y DERECHOS -->
+		<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; text-align: right;">
 			
-			<!-- Enlace de Correo -->
-			<a 
-				href="mailto:keyllahenriquez@gmail.com" 
-				style="display: inline-flex; align-items: center; gap: 0.3rem; color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 0.85rem; text-decoration: none; opacity: 0.9; transition: opacity 0.2s;"
-				onmouseover="this.style.opacity='1'" 
-				onmouseout="this.style.opacity='0.9'"
-			>
-				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-					<polyline points="22,6 12,13 2,6"></polyline>
-				</svg>
-				Correo
-			</a>
+			<p style="font-family: 'Josefin Sans', sans-serif; font-size: 0.95rem; font-weight: 400; color: #ffffff; margin: 0; letter-spacing: 0.05em;">
+				Comunícate conmigo:
+			</p>
 
-			<span style="color: #444444;">|</span>
+			<!-- Enlaces a Correo e Instagram -->
+			<div style="display: flex; align-items: center; gap: 1.2rem;">
+				
+				<!-- Correo -->
+				<a 
+					href="mailto:keyllahenriquez@gmail.com" 
+					style="display: inline-flex; align-items: center; gap: 0.4rem; color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 0.85rem; text-decoration: none; opacity: 0.9; transition: opacity 0.2s;"
+					onmouseover="this.style.opacity='1'" 
+					onmouseout="this.style.opacity='0.9'"
+				>
+					<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+						<polyline points="22,6 12,13 2,6"></polyline>
+					</svg>
+					Correo
+				</a>
 
-			<!-- Enlace de Instagram -->
-			<a 
-				href="https://www.instagram.com/keyllahenriquez/" 
-				target="_blank" 
-				rel="noopener noreferrer" 
-				style="display: inline-flex; align-items: center; gap: 0.3rem; color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 0.85rem; text-decoration: none; opacity: 0.9; transition: opacity 0.2s;"
-				onmouseover="this.style.opacity='1'" 
-				onmouseout="this.style.opacity='0.9'"
-			>
-				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-					<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-					<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-				</svg>
-				Instagram
-			</a>
+				<span style="color: #444444;">|</span>
+
+				<!-- Instagram -->
+				<a 
+					href="https://www.instagram.com/keyllahenriquez/" 
+					target="_blank" 
+					rel="noopener noreferrer" 
+					style="display: inline-flex; align-items: center; gap: 0.4rem; color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 0.85rem; text-decoration: none; opacity: 0.9; transition: opacity 0.2s;"
+					onmouseover="this.style.opacity='1'" 
+					onmouseout="this.style.opacity='0.9'"
+				>
+					<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+						<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+						<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+					</svg>
+					Instagram
+				</a>
+
+			</div>
+
+			<!-- Derechos de autor -->
+			<p style="font-family: 'Josefin Sans', sans-serif; font-size: 0.75rem; color: #777777; margin-top: 0.2rem; letter-spacing: 0.05em;">
+				&copy; {today.getFullYear()} HABITARME. Todos los derechos reservados.
+			</p>
 
 		</div>
 
-		<!-- 4. DERECHOS DE AUTOR -->
-		<p style="font-family: 'Josefin Sans', sans-serif; font-size: 0.75rem; color: #777777; margin: 0; letter-spacing: 0.05em;">
-			&copy; {today.getFullYear()} HABITARME. Todos los derechos reservados.
-		</p>
 	</div>
 </footer>

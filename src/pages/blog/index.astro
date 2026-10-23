@@ -5,25 +5,31 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 
-// 1. Obtenemos todos los artículos
 const rawPosts = await getCollection('blog');
 
-// 2. Separamos la entrada de bienvenida para que SIEMPRE vaya de primera
-const welcomePost = rawPosts.find(p => p.slug.includes('bienvenido') || p.data.title.toLowerCase().includes('bienvenido'));
-const otherPosts = rawPosts
-  .filter(p => !(p.slug.includes('bienvenido') || p.data.title.toLowerCase().includes('bienvenido')))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+// Identificamos la bienvenida de forma 100% segura
+const welcomePost = rawPosts.find(p => {
+	const title = p.data.title?.toLowerCase() || '';
+	const id = p.id?.toLowerCase() || '';
+	return title.includes('bienvenido') || title.includes('habitarme') || id.includes('bienvenido');
+});
 
-// Unimos la lista colocando la bienvenida al inicio
+const otherPosts = rawPosts
+	.filter(p => p !== welcomePost)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Colocamos la bienvenida de primera si existe
 const posts = welcomePost ? [welcomePost, ...otherPosts] : otherPosts;
 
-// Función para dar formato a las fechas en ESPAÑOL
-function formatSpanishDate(date: Date) {
-  return new Date(date).toLocaleDateString('es-ES', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+// Función segura para formatear la fecha a español
+function formatSpanishDate(dateInput: any) {
+	if (!dateInput) return '';
+	const date = new Date(dateInput);
+	return date.toLocaleDateString('es-ES', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	});
 }
 ---
 
@@ -98,11 +104,11 @@ function formatSpanishDate(date: Date) {
 				<ul class="posts-list">
 					{
 						posts.map((post) => {
-							const isWelcome = post.slug.includes('bienvenido') || post.data.title.toLowerCase().includes('bienvenido');
+							const isWelcome = post === welcomePost;
+							const postSlug = post.id || post.slug;
 							return (
 								<li class="post-card">
-									<a href={`/blog/${post.slug}/`}>
-										<!-- Si NO es el post de bienvenida, muestra la fecha en español -->
+									<a href={`/blog/${postSlug}/`}>
 										{!isWelcome && (
 											<span class="post-date">
 												{formatSpanishDate(post.data.pubDate)}

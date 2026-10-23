@@ -4,11 +4,27 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+// 1. Obtenemos todos los artículos
+const rawPosts = await getCollection('blog');
+
+// 2. Separamos la entrada de bienvenida para que SIEMPRE vaya de primera
+const welcomePost = rawPosts.find(p => p.slug.includes('bienvenido') || p.data.title.toLowerCase().includes('bienvenido'));
+const otherPosts = rawPosts
+  .filter(p => !(p.slug.includes('bienvenido') || p.data.title.toLowerCase().includes('bienvenido')))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Unimos la lista colocando la bienvenida al inicio
+const posts = welcomePost ? [welcomePost, ...otherPosts] : otherPosts;
+
+// Función para dar formato a las fechas en ESPAÑOL
+function formatSpanishDate(date: Date) {
+  return new Date(date).toLocaleDateString('es-ES', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
 ---
 
 <!doctype html>
@@ -20,7 +36,7 @@ const posts = (await getCollection('blog')).sort(
 				width: 100%;
 				max-width: 800px;
 				margin: 0 auto;
-				padding: 4em 1.5em;
+				padding: 3em 1.5em;
 				box-sizing: border-box;
 				min-height: calc(100vh - 200px);
 			}
@@ -52,6 +68,7 @@ const posts = (await getCollection('blog')).sort(
 				letter-spacing: 0.05em;
 				margin-bottom: 0.5rem;
 				display: block;
+				text-transform: capitalize;
 			}
 
 			.post-title {
@@ -73,32 +90,35 @@ const posts = (await getCollection('blog')).sort(
 			}
 		</style>
 	</head>
-	<body style="margin: 0; padding: 0; background-color: #E5D8C1;">
-		<!-- Cabecera limpia con "HABITARME" a la izquierda -->
+	<body style="margin: 0; padding: 0; background-color: rgb(229, 216, 193);">
 		<Header />
 
-		<!-- Contenido principal centrado -->
 		<main>
 			<section>
 				<ul class="posts-list">
 					{
-						posts.map((post) => (
-							<li class="post-card">
-								<a href={`/blog/${post.slug}/`}>
-									<span class="post-date">
-										<FormattedDate date={post.data.pubDate} />
-									</span>
-									<h2 class="post-title">{post.data.title}</h2>
-									<p class="post-description">{post.data.description}</p>
-								</a>
-							</li>
-						))
+						posts.map((post) => {
+							const isWelcome = post.slug.includes('bienvenido') || post.data.title.toLowerCase().includes('bienvenido');
+							return (
+								<li class="post-card">
+									<a href={`/blog/${post.slug}/`}>
+										<!-- Si NO es el post de bienvenida, muestra la fecha en español -->
+										{!isWelcome && (
+											<span class="post-date">
+												{formatSpanishDate(post.data.pubDate)}
+											</span>
+										)}
+										<h2 class="post-title">{post.data.title}</h2>
+										<p class="post-description">{post.data.description}</p>
+									</a>
+								</li>
+							);
+						})
 					}
 				</ul>
 			</section>
 		</main>
 
-		<!-- Footer de tira completa -->
 		<Footer />
 	</body>
 </html>

@@ -1,6 +1,7 @@
 ---
 title: "Bienvenidos a HABITARME"
 description: "Una pequeña introducción a este rincón digital y las razones que me trajeron aquí."
+pubDate: 
 heroImage: "/blog-placeholder-about.jpg"
 ---
 

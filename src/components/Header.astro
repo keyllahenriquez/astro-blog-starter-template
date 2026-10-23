@@ -1,92 +1,22 @@
 ---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
 ---
 
-<header class="site-header">
-  <nav class="site-nav">
-    <a class="site-logo" href="/" aria-label="HABITARME - Inicio">
-      <img
-        src="/blog-placeholder-about.jpg"
-        alt="HABITARME"
-      />
-    </a>
+<header style="width: 100%; background-color: #161616; padding: 1.2rem 0; box-sizing: border-box;">
+	<nav style="max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center;">
+		<!-- 1. Nombre "HABITARME" a la izquierda (sin la imagen) -->
+		<h2>
+			<a href="/" style="font-family: 'Shadows Into Light', cursive; font-size: 2.2rem; color: #ffffff; text-decoration: none; font-weight: 400; letter-spacing: 0.05em; margin: 0;">
+				HABITARME
+			</a>
+		</h2>
 
-    <div class="site-links">
-      <a href="/">Inicio</a>
-      <a href="/blog">Blog</a>
-      <a href="/">acerca de mi</a>
-    </div>
-  </nav>
+		<!-- 2. Menú de navegación a la derecha con "Acerca de mí" en mayúscula inicial -->
+		<div style="display: flex; gap: 1.8rem; align-items: center;">
+			<HeaderLink href="/" style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; text-decoration: none; font-weight: 300;">Inicio</HeaderLink>
+			<HeaderLink href="/blog" style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; text-decoration: none; font-weight: 300;">Blog</HeaderLink>
+			<HeaderLink href="/about" style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; text-decoration: none; font-weight: 300;">Acerca de mí</HeaderLink>
+		</div>
+	</nav>
 </header>
-
-<style>
-  .site-header {
-    background-color: #000000;
-    padding: 0.5rem 1.5rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .site-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .site-logo {
-    display: block;
-    flex: 0 1 480px;
-    min-width: 0;
-  }
-
-  .site-logo img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .site-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 2.5rem;
-    flex-shrink: 0;
-  }
-
-  .site-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-    letter-spacing: 0.05em;
-  }
-
-  .site-links a:hover {
-    color: #d8c5a5;
-  }
-
-  @media (max-width: 600px) {
-    .site-header {
-      padding: 0.75rem 1rem;
-    }
-
-    .site-nav {
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .site-logo {
-      flex: none;
-      width: 100%;
-      max-width: 450px;
-    }
-
-    .site-links {
-      gap: 2rem;
-    }
-  }
-</style>

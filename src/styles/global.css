@@ -1,15 +1,9 @@
 body {
-	/* Especificación explícita RGB que nos pedías */
-	background-color: rgb(229, 216, 193) !important; 
+	background-color: rgb(229, 216, 193) !important;
 	color: #2b2b2b;
 	margin: 0;
 	padding: 0;
 }
-
-/* Si sientes que rgb(229, 216, 193) sigue viéndose demasiado cálido, 
-   puedes probar con esta alternativa más suave y neutra:
-   background-color: rgb(242, 237, 228) !important; 
-*/
 
 .titulo-manuscrito {
 	font-family: "Shadows Into Light", cursive !important;

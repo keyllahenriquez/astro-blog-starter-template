@@ -15,7 +15,7 @@ const { title, description } = Astro.props;
 	<head>
 		<BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} />
 		<style>
-			/* TIRA FINA NEGRA SUPERIOR PARA ARTÍCULOS */
+			/* ENCABEZADO FIJO UNIFICADO (TIRA FINA NEGRA) */
 			.article-header {
 				width: 100%;
 				background-color: #000000;
@@ -74,12 +74,17 @@ const { title, description } = Astro.props;
 				font-family: 'Josefin Sans', sans-serif;
 				font-weight: 600;
 			}
+
+			/* UNIFICAR EL COLOR DEL PIE DE PÁGINA A NEGRO PURO (#000000) */
+			footer {
+				background-color: #000000 !important;
+			}
 		</style>
 	</head>
 
 	<body style="margin: 0; padding: 0; background-color: rgb(229, 216, 193);">
 		
-		<!-- TIRA FINA NEGRA CON HABITARME A LA IZQUIERDA Y MENÚ A LA DERECHA -->
+		<!-- ENCABEZADO ESTÁNDAR PARA ARTÍCULOS -->
 		<header class="article-header">
 			<a href="/" class="article-brand">HABITARME</a>
 			<nav class="article-nav">

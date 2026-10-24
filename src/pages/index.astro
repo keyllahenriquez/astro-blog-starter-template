@@ -2,52 +2,146 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { getEntry, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 
-const post = await getEntry('blog', 'de-que-trata');
-const { Content } = post ? await render(post) : { Content: null };
+const posts = await getCollection('blog');
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body style="background-color: #fafafa; color: #2c2c2c; margin: 0; padding: 0;">
-		<main style="margin: 0; padding: 0; width: 100%;">
-			
-			<!-- BANNER PRINCIPAL DE BORDE A BORDE -->
-			<section style="position: relative; width: 100%; height: 470px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; margin: 0; padding: 0;">
-				<img 
-					src="/blog-placeholder-about.jpg" 
-					alt="Banner Habitarme" 
-					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
-				/>
-				
-				<!-- Menú de navegación superior sobre la imagen de inicio -->
-				<nav style="display: flex; gap: 1.8rem; justify-content: flex-end; align-items: center; width: 100%; max-width: 1100px; margin: 0 auto; padding: 1.5rem 2rem; box-sizing: border-box; position: relative; z-index: 10;">
-				    <a href="/" style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; text-decoration: none; font-weight: 300; letter-spacing: 0.03em; text-shadow: 0px 1px 3px rgba(0,0,0,0.6);">Inicio</a>
-				    <a href="/blog" style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; text-decoration: none; font-weight: 300; letter-spacing: 0.03em; text-shadow: 0px 1px 3px rgba(0,0,0,0.6);">Blog</a>
-				    <a href="/about" style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; text-decoration: none; font-weight: 300; letter-spacing: 0.03em; text-shadow: 0px 1px 3px rgba(0,0,0,0.6);">Acerca de mí</a>
-				</nav>
+		<style>
+			/* BANNER PRINCIPAL MÁS FINO Y COMPACTO */
+			.home-hero {
+				position: relative;
+				width: 100%;
+				height: 420px; /* Altura más fina y elegante */
+				background-image: url('/blog-placeholder-about.jpg'); /* O la ruta de tu imagen */
+				background-size: cover;
+				background-position: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				box-sizing: border-box;
+			}
 
-				<!-- TEXTOS DEL BANNER -->
-				<div style="position: relative; z-index: 2; padding: 0 1.5rem; margin-top: 2rem;">
+			/* Capa oscura sutil para que resalten los textos */
+			.home-hero::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.25);
+				z-index: 1;
+			}
+
+			/* MENÚ SUPERIOR SOBRE EL BANNER */
+			.hero-nav {
+				position: relative;
+				z-index: 2;
+				display: flex;
+				gap: 2rem;
+				justify-content: flex-end;
+				align-items: center;
+				width: 100%;
+				max-width: 1100px;
+				margin: 0 auto;
+				padding: 1.5rem 2rem;
+				box-sizing: border-box;
+			}
+
+			.hero-nav a {
+				color: #ffffff;
+				font-family: 'Josefin Sans', sans-serif;
+				font-size: 1rem; /* Letras un poco más grandes */
+				font-weight: 600; /* Negrita para mayor visibilidad */
+				text-decoration: none;
+				letter-spacing: 0.02em; /* Espacio reducido entre letras */
+				text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.8);
+			}
+
+			.hero-nav a:hover {
+				opacity: 0.85;
+			}
+
+			/* CONTENEDOR DE TÍTULO Y SUBTÍTULO CENTRADOS */
+			.hero-content {
+				position: relative;
+				z-index: 2;
+				text-align: center;
+				padding: 0 1.5rem;
+				margin-bottom: auto;
+				margin-top: 1rem;
+			}
+
+			.titulo-manuscrito {
+				font-family: "Shadows Into Light", cursive !important;
+				font-weight: 400 !important;
+				font-size: 4.5rem !important;
+				margin: 0 !important;
+				color: #FFFFFF !important;
+				text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5) !important;
+			}
+
+			.subtitulo-limpio h4 {
+				font-family: "Josefin Sans", sans-serif !important;
+				font-weight: 300 !important;
+				font-size: 0.9rem !important;
+				color: #FFFFFF !important;
+				text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) !important;
+				letter-spacing: 0.1em !important;
+				margin-top: 0.4rem !important;
+			}
+
+			/* SECCIÓN DE BIENVENIDA / CONTENIDO INFERIOR */
+			main {
+				width: 100%;
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 4em 1.5em;
+				box-sizing: border-box;
+			}
+
+			.welcome-box {
+				background-color: transparent;
+			}
+		</style>
+	</head>
+	<body style="margin: 0; padding: 0; background-color: rgb(229, 216, 193);">
+		
+		<!-- BANNER PRINCIPAL (Fino, con menú e imagen proporcionada) -->
+		<header class="home-hero">
+			<!-- Menú superior: más grande, negrita y menor espacio entre letras -->
+			<nav class="hero-nav">
+				<a href="/">Inicio</a>
+				<a href="/blog">Blog</a>
+				<a href="/about">Acerca de mí</a>
+			</nav>
+
+			<!-- Textos centrales del banner -->
+			<div class="hero-content">
 				<h1 class="titulo-manuscrito">HABITARME</h1>
 				<div class="subtitulo-limpio">
 					<h4>UN ESPACIO PARA SER, SENTIR Y SOLTAR</h4>
 				</div>
-
-				</div>
-			</section>
-
-			<!-- ESPACIO DE LECTURA -->
-			<div style="max-width: 680px; margin: 0 auto; padding: 5rem 1.5rem 6rem 1.5rem;">
-				<article style="font-family: 'Josefin Sans', sans-serif; font-size: 1.50rem; line-height: 1.9; color: #2d2d2d;">
-					{Content ? <Content /> : <p>Cargando bienvenida...</p>}
-				</article>
 			</div>
+			
+			<!-- Espaciador inferior flexible -->
+			<div></div>
+		</header>
+
+		<!-- Contenido principal de la página de inicio -->
+		<main>
+			<section class="welcome-box">
+				<p style="font-family: 'Josefin Sans', sans-serif; font-weight: 300; font-size: 1.15rem; color: #2b2b2b; line-height: 1.8; text-align: center;">
+					<strong>HABITARME</strong> nace como un espacio para escribir, para poner en palabras aquello que muchas veces permanece dentro: pensamientos, emociones, experiencias, preguntas.
+				</p>
+			</section>
 		</main>
+
 		<Footer />
 	</body>
 </html>

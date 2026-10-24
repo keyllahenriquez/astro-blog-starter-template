@@ -156,3 +156,104 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Footer />
 	</body>
 </html>
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} />
+		<style>
+			/* TIRA FINA NEGRA SUPERIOR PARA ARTÍCULOS */
+			.article-header {
+				width: 100%;
+				background-color: #000000;
+				padding: 1.2rem 2rem;
+				box-sizing: border-box;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.article-brand {
+				font-family: "Shadows Into Light", cursive;
+				font-size: 1.8rem;
+				color: #ffffff;
+				text-decoration: none;
+			}
+
+			.article-nav {
+				display: flex;
+				gap: 2rem;
+				align-items: center;
+			}
+
+			.article-nav a {
+				color: #ffffff;
+				font-family: 'Josefin Sans', sans-serif;
+				font-size: 1.1rem;
+				font-weight: 600;
+				text-decoration: none;
+				letter-spacing: 0.01em;
+			}
+
+			.article-nav a:hover {
+				opacity: 0.85;
+			}
+
+			/* CONTENEDOR PRINCIPAL DEL ARTÍCULO */
+			main {
+				width: 100%;
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 4em 1.5em;
+				box-sizing: border-box;
+				font-family: 'Josefin Sans', sans-serif;
+				font-weight: 300;
+				font-size: 1.15rem;
+				color: #2b2b2b;
+				line-height: 1.8;
+				text-align: left;
+			}
+
+			.article-title {
+				font-size: 2.2rem;
+				margin-bottom: 1.5rem;
+				color: #2b2b2b;
+				font-family: 'Josefin Sans', sans-serif;
+				font-weight: 600;
+			}
+		</style>
+	</head>
+
+	<body style="margin: 0; padding: 0; background-color: rgb(229, 216, 193);">
+		
+		<!-- TIRA FINA NEGRA CON HABITARME A LA IZQUIERDA Y MENÚ A LA DERECHA -->
+		<header class="article-header">
+			<a href="/" class="article-brand">HABITARME</a>
+			<nav class="article-nav">
+				<a href="/">Inicio</a>
+				<a href="/blog">Blog</a>
+				<a href="/about">Acerca de mí</a>
+			</nav>
+		</header>
+
+		<!-- CONTENIDO DEL ARTÍCULO -->
+		<main>
+			<article>
+				<h1 class="article-title">{title}</h1>
+				<slot />
+			</article>
+		</main>
+
+		<Footer />
+	</body>
+</html>

@@ -16,7 +16,7 @@ const posts = await getCollection('blog');
 			.home-hero {
 				position: relative;
 				width: 100%;
-				height: 400px; /* Altura más fina y elegante */
+				height: 300px; /* Altura más fina y elegante */
 				background-image: url('/blog-placeholder-about.jpg'); /* O la ruta de tu imagen */
 				background-size: cover;
 				background-position: center;
@@ -137,8 +137,8 @@ const posts = await getCollection('blog');
 		<main>
 			<section class="welcome-box">
 				<p style="font-family: 'Josefin Sans', sans-serif; font-weight: 300; font-size: 1.15rem; color: #2b2b2b; line-height: 1.8; text-align: center;">
-					<strong>HABITARME</strong> nace como un espacio para escribir, para poner en palabras aquello que muchas veces permanece dentro: pensamientos, emociones, experiencias, preguntas.
-				</p>
+			{Content ? <Content /> : <p>Cargando contenido...</p>}
+		</main>
 			</section>
 		</main>
 

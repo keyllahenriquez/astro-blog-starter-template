@@ -15,8 +15,8 @@ const { title, description } = Astro.props;
 	<head>
 		<BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} />
 		<style>
-			/* ENCABEZADO FIJO UNIFICADO (TIRA FINA NEGRA) */
-			.article-header {
+			/* CABECERA IDÉNTICA A LA DEL LISTADO DE ARTÍCULOS */
+			.site-header {
 				width: 100%;
 				background-color: #000000;
 				padding: 1.2rem 2rem;
@@ -26,20 +26,20 @@ const { title, description } = Astro.props;
 				align-items: center;
 			}
 
-			.article-brand {
+			.site-brand {
 				font-family: "Shadows Into Light", cursive;
 				font-size: 1.8rem;
 				color: #ffffff;
 				text-decoration: none;
 			}
 
-			.article-nav {
+			.site-nav {
 				display: flex;
 				gap: 2rem;
 				align-items: center;
 			}
 
-			.article-nav a {
+			.site-nav a {
 				color: #ffffff;
 				font-family: 'Josefin Sans', sans-serif;
 				font-size: 1.1rem;
@@ -48,11 +48,11 @@ const { title, description } = Astro.props;
 				letter-spacing: 0.01em;
 			}
 
-			.article-nav a:hover {
+			.site-nav a:hover {
 				opacity: 0.85;
 			}
 
-			/* CONTENEDOR PRINCIPAL DEL ARTÍCULO */
+			/* CONTENIDO DEL ARTÍCULO */
 			main {
 				width: 100%;
 				max-width: 800px;
@@ -75,7 +75,7 @@ const { title, description } = Astro.props;
 				font-weight: 600;
 			}
 
-			/* UNIFICAR EL COLOR DEL PIE DE PÁGINA A NEGRO PURO (#000000) */
+			/* PIE DE PÁGINA CON EL MISMO TONO DE NEGRO */
 			footer {
 				background-color: #000000 !important;
 			}
@@ -84,17 +84,17 @@ const { title, description } = Astro.props;
 
 	<body style="margin: 0; padding: 0; background-color: rgb(229, 216, 193);">
 		
-		<!-- ENCABEZADO ESTÁNDAR PARA ARTÍCULOS -->
-		<header class="article-header">
-			<a href="/" class="article-brand">HABITARME</a>
-			<nav class="article-nav">
+		<!-- CABECERA ESTÁNDAR REPLICADA -->
+		<header class="site-header">
+			<a href="/" class="site-brand">HABITARME</a>
+			<nav class="site-nav">
 				<a href="/">Inicio</a>
 				<a href="/blog">Blog</a>
 				<a href="/about">Acerca de mí</a>
 			</nav>
 		</header>
 
-		<!-- CONTENIDO DEL ARTÍCULO -->
+		<!-- CONTENIDO -->
 		<main>
 			<article>
 				<h1 class="article-title">{title}</h1>

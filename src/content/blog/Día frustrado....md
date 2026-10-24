@@ -1,3 +1,8 @@
+---
+title: 'Dia frustrado...'
+description: 'Desahogando la frustración del día.'
+pubDate: '2026-09-22'
+---
 Día frustrado…
 
 Es frustrante pensar y sentir que ya terminas un ciclo y darte cuenta que no es real, que estás en medio del proceso. Pensar que ahora es un proceso evolutivo y no, es un proceso, ya está, con todas sus complejidades y dificultades que suelen presentarse, que capaz si es evolutivo pero no lo ves porque estás dentro del mismo. Hoy es mi día así, sintiéndome frustrada porque se escapa de mis manos el evadir ciertas circunstancias que ahora las tengo que afrontar y aceptar. Hoy me cuesta aceptar la situación presente, me abruma.

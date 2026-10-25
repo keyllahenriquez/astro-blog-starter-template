@@ -3,10 +3,6 @@ title: 'Evadir...'
 description: 'No hacerse cargo de lo que sentimos, trae consecuencias.'
 pubDate: '2026-08-18'
 ---
-
-EVADIR…
-
-
 Tema profundo e interesante…complejo, con aristas…
 
 

@@ -2,10 +2,6 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { getEntry, render } from 'astro:content';
-
-const post = await getEntry('blog', 'de-que-trata');
-const { Content } = post ? await render(post) : { Content: null };
 ---
 
 <!doctype html>
@@ -128,7 +124,29 @@ const { Content } = post ? await render(post) : { Content: null };
 		</header>
 
 		<main>
-			{Content ? <Content /> : <p>Cargando contenido...</p>}
+			<!-- AQUÍ ESCRIBES TU TEXTO DE BIENVENIDA EXCLUSIVO DE LA PORTADA -->
+			<h2 style="font-family: 'Shadows Into Light', cursive; font-size: 2.2rem; margin-bottom: 1rem; color: #2b2b2b;">Bienvenidos a HABITARME</h2>
+			<p>HABITARME es un espacio para poner en palabras aquello que muchas veces permanece dentro: pensamientos, emociones, experiencias, preguntas, descubrimientos y también contradicciones.
+				
+
+				HABITARME nace como un espacio para escribir.
+				
+				
+				Desde mi propia experiencia.
+				
+				Desde aquello que me conmueve.
+				
+				Desde lo que observo dentro y fuera de mí.
+				
+				Desde las preguntas que aparecen en el camino.
+				
+				Desde todo aquello que todavía estoy aprendiendo.
+				
+				Para mirar hacia dentro, para detenerme.
+				
+				
+				Escribo porque hay cosas que necesitan ser expresadas.
+				</p>
 		</main>
 
 		<Footer />

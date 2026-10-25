@@ -15,4 +15,6 @@ Aquí encontrarás mi manera de mirar la vida en este momento presente, encontra
 Quizás algo de lo que encuentres aquí te acompañe, quizás te cuestiones algo, quizás pases por aquí y continúes tu camino. Cualquier cosa que ocurra, es maravilloso.
 
 
+
+
 ¡Bienvenidos a HABITARME!

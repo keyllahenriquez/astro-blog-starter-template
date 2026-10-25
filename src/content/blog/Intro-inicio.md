@@ -1,6 +1,6 @@
 ---
-title: "Bienvenidos a HABITARME"
-description: "Introducción."
+title: "Introducción"
+description: "Página de Inicio."
 pubDate: 
 heroImage: "/blog-placeholder-about.jpg"
 ---
